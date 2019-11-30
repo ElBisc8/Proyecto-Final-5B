@@ -1,0 +1,225 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-12 modal-content bg-dark" style="margin-top: 150px;">
+	<div class="modal-header">
+		<dt style="color: rgb(0,255,0,.900);">Fair Nutrition | Sing in<i class="fas fa-leaf"></i></dt>
+	</div>
+	
+	
+	<form id="login" > <!--Form-->
+		<div class="modal-body col-md-6 mx-auto">
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+				  <span class="input-group-text"><i class="fas fa-envelope prefix grey-text"></i></span>
+				</div>
+				<input id="email" name="email" type="email" class="form-control" title="For exaple juan@hotmail.com" placeholder="Email" minlength="1" maxlength="50" required>
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text"><i class="fas fa-lock prefix grey-text"></i></span>
+				</div>
+				<input id="password" name="password" type="password" class="form-control" placeholder="Password" minlength="8" maxlength="16" pattern="[A-Za-z0-9]{8,16}" required>
+			</div>
+			<div class="alert alert-dismissible alert-danger">
+				<strong>User or email incorrect</strong>
+			</div>
+
+			<button type="button" class="btn btn-secondary" id="cancelarIS" >Cancel</button>
+			<input type="submit" class="btn btn-success" value="Sing in" id="iniciarSesion">
+		</div>
+	<!--Fin Cuerpo Modal-->
+	<!--Inicio Pie de Modal-->
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RegisterModal">Sing up</button><!--Botón para abrir el formulario de Registrararse en un modal-->
+			
+		</div>
+	</form><!--Fin Form-->
+</div>
+</div>
+
+<div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="RegisterModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<!--Inicio Modal Cabecera-->
+				<div class="modal-header">
+					<h5 class="modal-tittle" id="RegisterModalLabel">Sing Up</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<!--Fin Modal Cabcerea-->
+				<form id="registrarme"> <!--Form registrarse-->
+					<!--Inicio Cuerpo Modal-->
+					<div class="modal-body">
+						<div class="form-row">
+							<div class="col-md-12 mb-3">
+								<input type="text" name="Nombre" id="r-nombre" class="form-control" placeholder="Name" title="It should have letters" minlength="1" maxlength="30" required>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-6 mb-3">
+								<input type="text" name="ApellidoPaterno" id="r-apellidop" class="form-control" placeholder="Paternal Name" title="It should only have letters. Maximum length 25" minlength="1" maxlength="25" required>
+							</div>
+							<div class="col-md-6 mb-3">
+								<input type="text" name="ApellidoMaterno" id="r-apellidom" class="form-control" placeholder="Maternal Name" title="It should only have letters. Maximum length 25" minlength="1" maxlength="25" required>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-12 mb-3">
+								<input type="email" name="Email" id="r-email" class="form-control" placeholder="Email" minlength="1" maxlength="50" title="Por ejemplo juan@hotmail.com" required>
+								<small id="emailHelp">We'll never share your email with anyone else.</small>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-6 mb-3">
+								<input type="password" name="Contra" id="r-contra" class="form-control" placeholder="Password" title="It must not include special characters, it must be between 8 and 16 characters." minlength="8" maxlength="16" pattern="[A-Za-z0-9]{8,16}" required>
+								<small id="passwordHelp">It must not include special characters, it must be between 8 and 16 characters.</small>
+							</div>
+							<div class="col-md-6 mb-3">
+								<input type="password" name="Confirmacontra" id="r-confirmacontra" class="form-control" placeholder="Confirm password" title="It must not include special characters, it must be between 8 and 16 characters" minlength="8" maxlength="16" pattern="[A-Za-z0-9]{8,16}" required>
+								<small id="passwordConfirm"></small>
+							</div>
+						</div>
+					</div>
+					<!--Fin Cuerpo Modal-->
+					<!--Inicio Pie Modal-->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar" id="cancelar">Cancel</button>
+						<input id='r-submit' type="submit" class="btn btn-primary" value="Sing Up">
+					</div>
+					<!--Fin Pie Modal-->
+				</form> <!--Fin Form Registrarme-->
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script>
+
+	//----->Modal Form Registrarse<-----
+
+    //Botón cancelar registro
+    $("#cancelar").click(function(){  //Button id=cancelar
+        $("#registrarme")[0].reset(); //Borramos todos los inputs y dejamos en blanco. <form id="registrarme"></form>
+        $('#passwordHelp').hide(); //Ocultamos texto de ayuda en contraseña <small id="passwordHelp"></small>
+        $('#emailHelp').hide(); //Ocultamos texto de ayuda en email
+        $('#passwordConfirm').html(''); //Borramos contenido de elemento <small id="passwordConfirm"></small>
+    });
+
+    //Textos de ayuda Contraseña y Correo
+    $('#passwordHelp').hide();//Ocultamos texto de ayuda para contraseña al cargar el documento, por que solo se mostrara cuando demos clic.
+    $('#emailHelp').hide(); //Ocultamos texto de ayuda para email al cargar el documento, por que solo se mostrara cuando demos clic.
+    $('#r-contra').click(function(){
+        $('#passwordHelp').show();
+    }); //Cuando demos click en el input contraseña mostraremos texto ayuda en contraseña (No debe incluir caracteres especiales).
+    $('#r-email').click(function(){
+        $('#emailHelp').show();
+    });
+
+    //Validación de contraseñas
+    function contraCoincide(){ //Funcion si la contraseña coincide
+        $('#passwordConfirm').css('color','#1aac0d'); //Establecemos color verde al texto de el elemento con id #passwordConfirm
+        $('#passwordConfirm').html('Passwords match.') //Ingresamos texto a el elemento
+    };
+    function contraNoCoincide(){ //Funcion si la contraseña no coincide
+        $('#passwordConfirm').css('color','red'); //Establecemos color rojo al texto de el elemento con id #passwordConfirm
+        $('#passwordConfirm').html("Passwords do not match."); //Ingresamos texto a el elemento 
+    }
+
+    $('#r-confirmacontra').keyup(function(){ //Input id=r-confirmacontra. Al precionar una tecla
+        if($('#r-contra').val()==$('#r-confirmacontra').val()){ //Comparamos si coincide la contraseña con la contraseña confirmada
+            contraCoincide();
+        }else{ //Si la comparación no se cumplio entonces 
+            contraNoCoincide();
+        }
+        if ($('#r-confirmacontra').val()=='' && $('#r-contra').val()==''){ //Comparamos si las contraseñas se quedaron en blanco si es asi entonces...Esto es para evitar un error logico de que cuando quedan en blanco los inputs sigue mostrando mensaje "contraseñas coinciden".            contraNoCoincide(); 
+            contraNoCoincide();
+        }
+    });
+
+    $('#r-contra').keyup(function(){ //Input id=r-contra. Al precionar una tecla
+        if ($('#r-confirmacontra').val()){ //Comparamos si Input id=r-confirmacontra contiene algo. si es asi entonces...
+            if ($('#r-contra').val()==$('#r-confirmacontra').val()){ //Comparamos si las contraseñas coinciden, si es asi entonces...
+                contraCoincide();
+            }else{
+                contraNoCoincide();
+            }
+        } 
+  
+    })
+
+
+    $('#registrarme').submit(function(e){
+        e.preventDefault();
+
+        if($('#r-contra').val()==$('#r-confirmacontra').val()){
+            $.ajax({
+                 type: "POST",
+                 url: "includesphp/registrarse.php",
+                 data: $('#registrarme').serialize(),
+                 success: function (response) {
+                   
+                    if(response=='Registrado'){
+                        window.location = 'User/';
+                    }else if(response=='Existe'){
+                        alert("An account with this email address already exists.");
+                    }
+                    
+                 }
+             });
+        }
+
+    });   
+       
+	//----->Fin Modal Form Registrarse<-----
+	
+
+
+    
+ 	//----->Inicio Modal Form Iniciar Sesión<-----
+	
+	$('#cancelarIS').click(function(){  //Botón cancelar inicio de sesión
+        $('#login')[0].reset(); //Borramos todos los inputs y dejamos en blanco.
+        $('.alert').hide();
+    });
+
+    $(".alert").hide(); //Ocultamos alerta de email y/o contraseña incorrectos al cargar el documento.
+
+
+	 $("#login").submit(function(e){
+        e.preventDefault();
+    /*    const postData = {
+            email: $('#email').val(),
+            password: $('#password').val(),
+            //Otra opción de enviar los datos, de momento me da error.
+        }; */
+
+        $.ajax({
+            type: "POST",
+            url: "includesphp/login.php",
+            data: $('#login').serialize(),
+            success: function (response) {
+                const respuesta = JSON.parse(response);
+                
+                if(!respuesta.error){
+                    if (respuesta.tipo=='0'){
+                        window.location = 'Admin/';
+                    }else if (respuesta.tipo=='1'){
+                        window.location = 'User/';
+                    }
+                }else{
+
+                    $('.alert').show();
+                    setTimeout(function(){
+                        $('.alert').hide();
+                    },2000)
+                    
+                }
+
+            }
+        });
+
+	});
+	//----->Fin Modal Form Iniciar Sesión<-----
+</script>

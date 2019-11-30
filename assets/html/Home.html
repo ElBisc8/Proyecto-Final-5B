@@ -1,0 +1,464 @@
+<div class="carouselEdit" style="height: 700px; margin-bottom: 20px;">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+	  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+	  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+	  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner">
+	  <div class="carousel-item active">
+		<img class="d-block w-100" src="assets/img/n1.png" style="height: 700px;" alt="First slide">
+	  </div>
+	  <div class="carousel-item">
+		<img class="d-block w-100" src="assets/img/n2.jpg" style="height: 700px;" alt="Second slide">
+	  </div>
+	  <div class="carousel-item">
+		<img class="d-block w-100" src="assets/img/n3.png" style="height: 700px;" alt="Third slide">
+	  </div>
+	</div>
+	<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+	  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	  <span class="sr-only">Previous</span>
+	</a>
+	<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+	  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	  <span class="sr-only">Next</span>
+	</a>
+  </div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+	<button id="aboutUs" class="btn btn-success">Hide About Us</button>
+	&nbsp;
+	<button id="workTeam" class="btn btn-success">Hide Work Team</button>
+</div>
+
+
+<!--BOTÓN PARA MOSTRAR ABOUT US-->
+<script> 
+
+	var auxaboutUs = 0;
+	var auxworkTeam = 0;
+	
+	$('#aboutUs').click(function(){
+		
+
+		if (auxaboutUs == 0) {
+			$('#content-aboutUs').hide(2000);
+			auxaboutUs = 1;
+			$('#aboutUs').html("Show About Us");
+		} else if (auxaboutUs == 1){
+			$('#content-aboutUs').show(2000);
+			auxaboutUs = 0;
+			$('#aboutUs').html("Hide About Us");
+		}
+
+	})
+
+	$('#workTeam').click(function(){
+		
+
+		if (auxworkTeam == 0) {
+			$('#content-workTeam').hide(2000);
+			auxworkTeam = 1;
+			$('#workTeam').html("Show Work Team");
+		} else if (auxworkTeam == 1){
+			$('#content-workTeam').show(2000);
+			auxworkTeam = 0;
+			$('#workTeam').html("Hide Work Team");
+		}
+
+	})
+	
+</script>
+
+<div id="content-aboutUs" class="col-sm-12 modal-content bg-light text-center" style="margin-top: 20px;">
+	<!--- Copia abajo y agrega la info --->
+	
+	<div class="modal-header"><h5><dt><i class="fas fa-users"></i> About us</dt></h5></div>
+	<div class="modal-body">
+		<dt></dt>
+		<dd>We are a group of people who are committed to people's health and their way of eating daily.
+		</dd><dt style="color: rgb(255,100,0,.800);"><i class="fas fa-carrot"></i>
+		<dd>Fair Team | Nutrition is made up of autonomous health professionals, specialists and nutrition experts: pharmacists, nutritionists and doctors with experience in the clinical field, in health consulting and in the scientific (clinical research).
+		</dd><dt style="color: rgb(000,00,0,.800);"><i class="fas fa-user-tie"></i>
+			<dd>Erick Ricardo Hernández Ayala, Certificate in Nutrition from the University of UVAZA, Specialist in Body Biomechanics and Expert in Nutrition, Dietetics, Clinical Nutrition and Web Programming from the University of Colima, leads Fair Team, in coordination with different health professionals and programmers who participate in this project. 
+			</dd>
+			<img src="assets\img\sc-piloto.jpeg" style="width:20%" class="rounded">
+		<dd>We make available our knowledge of health, as professionals that are his, and our experience in nutrition, general, in different areas, such as tourism, and other areas where communities are the protagonists, whether they are healthy people or people who suffer from a disease where food and nutrition are key to their health. We also act at the individual level, giving solutions to specific food and nutrition situations that affect both clients and people of the groups that specifically request or require it. We apply our professionalism to the maintenance and improvement of health.
+		</dd><dt style="color: rgb(155,000,80,.700);"><i class="fas fa-brain"></i>
+
+	</div><br><br>
+</div>
+
+<div id="content-workTeam" class="col-sm-12 modal-content bg-light text-center" style="margin-top: 20px;">
+	
+	<div class="modal-header"><h5><dt><i class="fas fa-users-cog"></i> Work Team</dt></h5></div>
+	<div class="modal-body">
+	
+		<div class="row">
+				<!--Style Team member-->
+				<style type="text/css">
+				
+				#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #007b5e !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+				</style>
+			
+				<!-- Team member -->
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+						<div class="mainflip">
+							<div class="frontside">
+								<div class="card">
+									<div class="card-body text-center">
+										<p><img class=" img-fluid" src="assets/img/sc-0.jpeg" alt="card image"></p>
+										<h4 class="card-title">Programmer</h4>
+										<p class="card-text">Erick Ricardo Hernández Ayala</p>
+										<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="backside">
+								<div class="card">
+									<div class="card-body text-center mt-4">
+										<h4 class="card-title">Programmer</h4>
+										<p class="card-text">BodyBuilder, Nutritionist and Graphic designer.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ./Team member -->
+
+				<div class="col-xs-12 col-sm-6 col-md-4">
+						<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+							<div class="mainflip">
+								<div class="frontside">
+									<div class="card">
+										<div class="card-body text-center">
+											<p><img class=" img-fluid" src="assets/img/sc-2.jpeg" alt="card image"></p>
+											<h4 class="card-title">Programmer</h4>
+											<p class="card-text">Jose de Jesus Gonzales Romero</p>
+											<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="backside">
+									<div class="card">
+										<div class="card-body text-center mt-4">
+											<h4 class="card-title">Programmer</h4>
+											<p class="card-text">Athlete, Graphic designer, testing person.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 col-sm-6 col-md-4">
+							<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+								<div class="mainflip">
+									<div class="frontside">
+										<div class="card">
+											<div class="card-body text-center">
+												<p><img class=" img-fluid" src="assets/img/sc-9.jpeg" alt="card image"></p>
+												<h4 class="card-title">Programmer</h4>
+												<p class="card-text">Adrian Flores Zuñiga</p>
+												<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+									<div class="backside">
+										<div class="card">
+											<div class="card-body text-center mt-4">
+												<h4 class="card-title">Programmer</h4>
+												<p class="card-text">Programmer, Graphic designer.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4">
+								<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+									<div class="mainflip">
+										<div class="frontside">
+											<div class="card">
+												<div class="card-body text-center">
+													<p><img class=" img-fluid" src="assets/img/sc-3.jpeg" alt="card image"></p>
+													<h4 class="card-title">Programmer</h4>
+													<p class="card-text">Miguel Hernandez Escobedo</p>
+													<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="backside">
+											<div class="card">
+												<div class="card-body text-center mt-4">
+													<h4 class="card-title">Programmer</h4>
+													<p class="card-text">Programmer, testing individual, fault tester.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-xs-12 col-sm-6 col-md-4">
+									<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+										<div class="mainflip">
+											<div class="frontside">
+												<div class="card">
+													<div class="card-body text-center">
+														<p><img class=" img-fluid" src="assets/img/sc-5.jpeg" alt="card image"></p>
+														<h4 class="card-title">Programmer</h4>
+														<p class="card-text">Brisa Jamiley Jimenez Castillo</p>
+														<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+													</div>
+												</div>
+											</div>
+											<div class="backside">
+												<div class="card">
+													<div class="card-body text-center mt-4">
+														<h4 class="card-title">Programmer</h4>
+														<p class="card-text">Programer, Graphic designer and assistant ideas.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xs-12 col-sm-6 col-md-4">
+										<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+											<div class="mainflip">
+												<div class="frontside">
+													<div class="card">
+														<div class="card-body text-center">
+															<p><img class=" img-fluid" src="assets/img/sc-4.jpeg" alt="card image"></p>
+															<h4 class="card-title">Programmer</h4>
+															<p class="card-text">Leonardo Guadalupe Llamas Ceja</p>
+															<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+														</div>
+													</div>
+												</div>
+												<div class="backside">
+													<div class="card">
+														<div class="card-body text-center mt-4">
+															<h4 class="card-title">Programmer</h4>
+															<p class="card-text">Son of the Roberto teacher and testing person.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-xs-12 col-sm-6 col-md-4">
+											<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+												<div class="mainflip">
+													<div class="frontside">
+														<div class="card">
+															<div class="card-body text-center">
+																<p><img class=" img-fluid" src="assets/img/sc-6.jpeg" alt="card image"></p>
+																<h4 class="card-title">Programmer</h4>
+																<p class="card-text">Shaula Natsu Meza Pulido</p>
+																<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+															</div>
+														</div>
+													</div>
+													<div class="backside">
+														<div class="card">
+															<div class="card-body text-center mt-4">
+																<h4 class="card-title">Programmer</h4>
+																<p class="card-text">Graphic designer.</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-xs-12 col-sm-6 col-md-4">
+												<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+													<div class="mainflip">
+														<div class="frontside">
+															<div class="card">
+																<div class="card-body text-center">
+																	<p><img class=" img-fluid" src="assets/img/sc-8.jpeg" alt="card image"></p>
+																	<h4 class="card-title">Programmer</h4>
+																	<p class="card-text">Alan Amaury Mora Vega</p>
+																	<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+																</div>
+															</div>
+														</div>
+														<div class="backside">
+															<div class="card">
+																<div class="card-body text-center mt-4">
+																	<h4 class="card-title">Programmer</h4>
+																	<p class="card-text">Son of the Orlando teacher, programmer and next owner of the workshop.</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+										</div>
+										
+										<div class="col-xs-12 col-sm-6 col-md-4">
+												<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+													<div class="mainflip">
+														<div class="frontside">
+															<div class="card">
+																<div class="card-body text-center">
+																	<p><img class=" img-fluid" src="assets/img/sc-01.jpeg" alt="card image"></p>
+																	<h4 class="card-title">Programmer</h4>
+																	<p class="card-text">Jose Ramon Navarro Avila</p>
+																	<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+																</div>
+															</div>
+														</div>
+														<div class="backside">
+															<div class="card">
+																<div class="card-body text-center mt-4">
+																	<h4 class="card-title">Programmer</h4>
+																	<p class="card-text">Son of the teacher eliud and heir to the square.</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+										</div>
+
+										<div class="col-xs-12 col-sm-6 col-md-4">
+												<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+													<div class="mainflip">
+														<div class="frontside">
+															<div class="card">
+																<div class="card-body text-center">
+																	<p><img class=" img-fluid" src="assets/img/sc-7.jpeg" alt="card image"></p>
+																	<h4 class="card-title">Programmer</h4>
+																	<p class="card-text">Claudio Adrian Padilla Gonzales</p>
+																	<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+																</div>
+															</div>
+														</div>
+														<div class="backside">
+															<div class="card">
+																<div class="card-body text-center mt-4">
+																	<h4 class="card-title">Programmer</h4>
+																	<p class="card-text">Programmer, Athlete and testing person.</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+										</div>
+
+			</div>
+		
+				
+	</div>
+
+</div>
+</div>  
+</div>
